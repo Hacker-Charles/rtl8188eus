@@ -142,13 +142,13 @@ If you are are taking "Learn Ethical Hacking From Scratch | Udemy" by Zaid Sabih
 
 In the begining, I am able to enter monitor mode. However after a few days, I found out it doesn't allow to enter monitor mode. I think TP-Link TL-WN722N v2/v3 have automatically updated its driver.
 
-Then, I find a video from [David Bombal](https://www.youtube.com/watch?v=tYnjMiTTdms) but still can't perfectly solve the issue. However, I find below steps work fine for me.
+Then, I find a video from [Hacker Charles](https://www.youtube.com/watch?v=cD-Jqwcd0dc&) which perfectly solved the issue. However, I also find below steps work fine for me.
 
 1. `sudo apt-get update && sudo apt-get full-upgrade`
 2. Reboot in order to load the new kernel (if downloaded).
 3. `sudo apt-get install linux-headers-$(uname -r) bc build-essential libelf-dev dkms`
 4. `sudo rmmod r8188eu.ko`
-5. `git https://github.com/drygdryg/rtl8188eus` (This works for me 😂)
+5. `https://github.com/Hacker-Charles/rtl8188eus` (This works for me 😂)
 6. `cd rtl8188eus`
 7. `echo 'blacklist r8188eu'|sudo tee -a '/etc/modprobe.d/realtek.conf'`
 8. `sudo make && make install`
